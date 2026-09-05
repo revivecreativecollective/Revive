@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Start something — REVIVE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.inquiry{min-height:100svh;padding:16vh 8vw;background:linear-gradient(180deg,#d7c7b4,#9caf89 55%,#668070);color:#fffaf4}
+form{max-width:900px;margin:8vh auto 0;display:grid;gap:30px}
+label{font:500 clamp(25px,3vw,42px) var(--serif)}
+input,textarea,select{width:100%;margin-top:12px;border:0;border-bottom:1px solid rgba(255,255,255,.55);background:transparent;color:inherit;padding:14px 0;font:400 16px var(--sans);outline:none}
+textarea{min-height:130px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.submit{justify-self:start;margin-top:10px}.back{position:absolute;top:25px;right:32px}
+@media(max-width:700px){.row{grid-template-columns:1fr}.inquiry{padding:15vh 7vw}.back{right:20px}}
+</style>
+</head>
+<body>
+<header class="site-header" style="color:#fffaf4;mix-blend-mode:normal"><a class="wordmark" href="index.html">REVIVE<span>®</span></a><a class="back" href="index.html">← back</a></header>
+<main class="inquiry">
+<p class="eyebrow">A little conversation</p>
+<h1 style="font:500 clamp(62px,10vw,150px)/.86 var(--serif);letter-spacing:-.055em;margin:28px 0">Tell me<br><em>what's going on.</em></h1>
+<p style="max-width:470px;line-height:1.6">This first version is intentionally simple. Tomorrow, this becomes the more playful, useful Revive questionnaire we design together.</p>
+<form onsubmit="event.preventDefault();alert('Thank you — this prototype is ready for the next iteration.');">
+<div class="row"><label>Your name<input required name="name" placeholder="What should I call you?"></label><label>Your email<input required type="email" name="email" placeholder="Where can I reach you?"></label></div>
+<label>What are you building?<input name="project" placeholder="Tell me the short version."></label>
+<label>What do you want people to feel?<textarea name="feeling" placeholder="Give me the messy version."></textarea></label>
+<label>Anything else I should know?<textarea name="notes" placeholder="Links, ideas, wild thoughts..."></textarea></label>
+<button class="enter submit" type="submit"><span>Send it into the world</span><i>↗</i></button>
+</form>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>
