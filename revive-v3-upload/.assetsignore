@@ -1,0 +1,11 @@
+README.md
+ASSET-NOTES.md
+content-editor.html
+content-editor.js
+wrangler.jsonc
+.DS_Store
+**/.DS_Store
+*.zip
+node_modules/
+.git/
+.wrangler/
