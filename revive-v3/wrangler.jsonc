@@ -1,7 +1,5 @@
 {
   "name": "revive-v3",
-  "compatibility_date": "2026-09-06",
-  "assets": {
-    "directory": "."
-  }
+  "compatibility_date": "2026-09-07",
+  "assets": { "directory": ".", "not_found_handling": "404-page" }
 }
