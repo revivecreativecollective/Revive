@@ -20,7 +20,9 @@ Open `index.html` in a browser, or serve this folder with `python3 -m http.serve
 
 ### Typeform
 
-Open `content-editor.html` locally and paste your published Typeform link. Click **Download content.js** and replace `content.js` in the GitHub `revive-v3` folder. The inquiry page's button will open your form. Until a valid link is present it opens an email to `eden@revivecreativecollective.com`; it does not claim to collect or save submissions.
+Current Typeform: https://form.typeform.com/to/akWqAavH. Inquiry buttons open it directly, and the old inquiry page forwards visitors to it when JavaScript is available. A direct form link and business email remain as fallbacks. The About Me paragraphs were updated to Eden’s supplied copy on September 15, 2026.
+
+To change the form link later, open `content-editor.html` locally, paste the new published link, download `content.js`, and replace that file in GitHub’s `revive-v3` folder. Also update the static Typeform links in `index.html` and `inquiry.html` so visitors without JavaScript receive the same link. The site does not store questionnaire submissions; Typeform handles them.
 
 Once connected, edit questions inside the SAME Typeform and click **Publish edits** there. Your site needs no update as long as that form's URL stays the same. Changing question types or deleting questions may affect existing Typeform results; export them first when needed.
 
@@ -60,7 +62,7 @@ The existing Worker address is `https://revive-v3.ed6schu.workers.dev`. Attachin
 - `content.js` is the single editable source for Typeform and the portfolio. The HTML gallery is also present as a no-JavaScript fallback; if you want new photos reflected in that fallback, ask for the fallback markup to be refreshed too.
 - Existing photos have smaller WebP copies; no AI client work or testimonials were added.
 
-No newsletter, Typeform account, analytics tracker, payment or booking system has been activated. Inquiry uses the supplied business email until Typeform is configured.
+No newsletter, analytics tracker, payment or booking system has been activated. Inquiry links use Eden’s published Typeform; the supplied business email remains available in the footer.
 
 ## Sources
 

@@ -6,7 +6,7 @@
  * Or use content-editor.html to download this file without editing code.
  */
 window.REVIVE_CONTENT = {
-  typeformUrl: "",
+  typeformUrl: "https://form.typeform.com/to/akWqAavH",
   portfolio: [
     { image: "assets/web/hotlevis.webp", alt: "Editorial denim detail", caption: "Style, story, texture.", layout: "tall" },
     { image: "assets/web/sandwitch.webp", alt: "Sandwich and fries", caption: "Food worth a detour.", layout: "" },

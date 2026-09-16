@@ -57,8 +57,9 @@
     try {
       const url = new URL(content.typeformUrl);
       if (url.protocol === 'https:') {
-        const link = document.querySelector('#inquiryLink');
-        if (link) { link.href = url.href; document.querySelector('#inquiryHelp').textContent = 'A few questions, at your own pace. Opens our inquiry form.'; }
+        document.querySelectorAll('[data-inquiry-link], #inquiryLink').forEach(link => { link.href = url.href; });
+        // Keep old inquiry bookmarks working, without another placeholder step.
+        if (document.body.classList.contains('inquiry-page')) window.location.replace(url.href);
       }
     } catch { /* Keep working email link if the pasted URL is invalid. */ }
   }
