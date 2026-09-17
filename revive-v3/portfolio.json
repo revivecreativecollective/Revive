@@ -1,0 +1,506 @@
+{
+  "photos": {
+    "clothingrack": {
+      "image": "assets/web/portfolio-clothingrack-1800.webp",
+      "thumbnail": "assets/web/portfolio-clothingrack-640.webp",
+      "alt": "Clothing arranged on pink hangers beneath a painting",
+      "width": 1800,
+      "height": 1350,
+      "srcset": "assets/web/portfolio-clothingrack-640.webp 640w, assets/web/portfolio-clothingrack-1800.webp 1800w"
+    },
+    "fit": {
+      "image": "assets/web/portfolio-fit-1800.webp",
+      "thumbnail": "assets/web/portfolio-fit-640.webp",
+      "alt": "White blouse and green pleated skirt in a mirror outfit detail",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-fit-640.webp 480w, assets/web/portfolio-fit-1800.webp 1350w"
+    },
+    "milkdonut": {
+      "image": "assets/web/portfolio-milkdonut-1800.webp",
+      "thumbnail": "assets/web/portfolio-milkdonut-640.webp",
+      "alt": "Milk bottle and two pastries on a sunlit white table",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-milkdonut-640.webp 480w, assets/web/portfolio-milkdonut-1800.webp 1350w"
+    },
+    "powerpuff": {
+      "image": "assets/web/portfolio-powerpuff-1800.webp",
+      "thumbnail": "assets/web/portfolio-powerpuff-640.webp",
+      "alt": "Yellow graphic T-shirt, blue jeans and rings in a sunny outfit detail",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-powerpuff-640.webp 480w, assets/web/portfolio-powerpuff-1800.webp 1350w"
+    },
+    "vogue": {
+      "image": "assets/web/portfolio-vogue-1800.webp",
+      "thumbnail": "assets/web/portfolio-vogue-640.webp",
+      "alt": "Purple graphic T-shirt and dark denim in the sunshine",
+      "width": 1800,
+      "height": 1350,
+      "srcset": "assets/web/portfolio-vogue-640.webp 640w, assets/web/portfolio-vogue-1800.webp 1800w"
+    },
+    "floridapool": {
+      "image": "assets/web/portfolio-floridapool-1800.webp",
+      "thumbnail": "assets/web/portfolio-floridapool-640.webp",
+      "alt": "Turquoise swimming pool framed by palm trees and blue sky",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-floridapool-640.webp 480w, assets/web/portfolio-floridapool-1800.webp 1350w"
+    },
+    "home-jpg": {
+      "image": "assets/web/portfolio-home-jpg-1800.webp",
+      "thumbnail": "assets/web/portfolio-home-jpg-640.webp",
+      "alt": "Pale blue evening sky and moon above a house",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-home-jpg-640.webp 480w, assets/web/portfolio-home-jpg-1800.webp 1350w"
+    },
+    "lakeroosevelt": {
+      "image": "assets/web/portfolio-lakeroosevelt-1800.webp",
+      "thumbnail": "assets/web/portfolio-lakeroosevelt-640.webp",
+      "alt": "People gathered around a fire outside a house at dusk",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-lakeroosevelt-640.webp 480w, assets/web/portfolio-lakeroosevelt-1800.webp 1350w"
+    },
+    "met": {
+      "image": "assets/web/portfolio-met-1800.webp",
+      "thumbnail": "assets/web/portfolio-met-640.webp",
+      "alt": "A visitor sketching beside a marble sculpture in a museum",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-met-640.webp 480w, assets/web/portfolio-met-1800.webp 1350w"
+    },
+    "montenegro": {
+      "image": "assets/web/portfolio-montenegro-1800.webp",
+      "thumbnail": "assets/web/portfolio-montenegro-640.webp",
+      "alt": "A green mountain valley beneath bright clouds",
+      "width": 1800,
+      "height": 1350,
+      "srcset": "assets/web/portfolio-montenegro-640.webp 640w, assets/web/portfolio-montenegro-1800.webp 1800w"
+    },
+    "mountainfarm": {
+      "image": "assets/web/portfolio-mountainfarm-1800.webp",
+      "thumbnail": "assets/web/portfolio-mountainfarm-640.webp",
+      "alt": "A red tractor and blue trailer below green mountains",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-mountainfarm-640.webp 480w, assets/web/portfolio-mountainfarm-1800.webp 1350w"
+    },
+    "oregonhouse": {
+      "image": "assets/web/portfolio-oregonhouse-1800.webp",
+      "thumbnail": "assets/web/portfolio-oregonhouse-640.webp",
+      "alt": "Light-filled living room with a vaulted wooden ceiling and tall windows",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-oregonhouse-640.webp 480w, assets/web/portfolio-oregonhouse-1800.webp 1350w"
+    },
+    "asapyuh": {
+      "image": "assets/web/portfolio-asapyuh-1800.webp",
+      "thumbnail": "assets/web/portfolio-asapyuh-640.webp",
+      "alt": "Performer holding a microphone beneath warm red concert lights",
+      "width": 1106,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-asapyuh-640.webp 393w, assets/web/portfolio-asapyuh-1800.webp 1106w"
+    },
+    "asapyuh1": {
+      "image": "assets/web/portfolio-asapyuh1-1800.webp",
+      "thumbnail": "assets/web/portfolio-asapyuh1-640.webp",
+      "alt": "Performer reaching toward a crowd under blue stage lights",
+      "width": 1134,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-asapyuh1-640.webp 403w, assets/web/portfolio-asapyuh1-1800.webp 1134w"
+    },
+    "bkkardi": {
+      "image": "assets/web/portfolio-bkkardi-1800.webp",
+      "thumbnail": "assets/web/portfolio-bkkardi-640.webp",
+      "alt": "Two women in green and white dresses at an outdoor celebration",
+      "width": 1200,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-bkkardi-640.webp 426w, assets/web/portfolio-bkkardi-1800.webp 1200w"
+    },
+    "champagnelanes": {
+      "image": "assets/web/portfolio-champagnelanes-1800.webp",
+      "thumbnail": "assets/web/portfolio-champagnelanes-640.webp",
+      "alt": "Friends dressed up around a table in a colorful cocktail bar",
+      "width": 1440,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-champagnelanes-640.webp 512w, assets/web/portfolio-champagnelanes-1800.webp 1440w"
+    },
+    "jonb": {
+      "image": "assets/web/portfolio-jonb-1800.webp",
+      "thumbnail": "assets/web/portfolio-jonb-640.webp",
+      "alt": "A crowd gathered at an outdoor waterfront venue at sunset",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-jonb-640.webp 480w, assets/web/portfolio-jonb-1800.webp 1350w"
+    },
+    "starbeach": {
+      "image": "assets/web/portfolio-starbeach-1800.webp",
+      "thumbnail": "assets/web/portfolio-starbeach-640.webp",
+      "alt": "Friends gathered on the sand beside the ocean",
+      "width": 1445,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-starbeach-640.webp 514w, assets/web/portfolio-starbeach-1800.webp 1445w"
+    },
+    "chai": {
+      "image": "assets/web/portfolio-chai-1800.webp",
+      "thumbnail": "assets/web/portfolio-chai-640.webp",
+      "alt": "An iced drink held in front of sunlit prickly pear cactus",
+      "width": 1200,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-chai-640.webp 427w, assets/web/portfolio-chai-1800.webp 1200w"
+    },
+    "charcuteri": {
+      "image": "assets/web/portfolio-charcuteri-1800.webp",
+      "thumbnail": "assets/web/portfolio-charcuteri-640.webp",
+      "alt": "Cheese, fruit, crackers and sliced meats arranged on a grazing board",
+      "width": 1383,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-charcuteri-640.webp 491w, assets/web/portfolio-charcuteri-1800.webp 1383w"
+    },
+    "coffeefame": {
+      "image": "assets/web/portfolio-coffeefame-1800.webp",
+      "thumbnail": "assets/web/portfolio-coffeefame-640.webp",
+      "alt": "Iced coffee and a breakfast sandwich on a cafe table",
+      "width": 1248,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-coffeefame-640.webp 444w, assets/web/portfolio-coffeefame-1800.webp 1248w"
+    },
+    "coolgirlfame": {
+      "image": "assets/web/portfolio-coolgirlfame-1800.webp",
+      "thumbnail": "assets/web/portfolio-coolgirlfame-640.webp",
+      "alt": "Two people holding iced coffee and matcha outside a cafe",
+      "width": 1517,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-coolgirlfame-640.webp 539w, assets/web/portfolio-coolgirlfame-1800.webp 1517w"
+    },
+    "earlgrey": {
+      "image": "assets/web/portfolio-earlgrey-1800.webp",
+      "thumbnail": "assets/web/portfolio-earlgrey-640.webp",
+      "alt": "Cream swirling into a glass of tea beside small ceramic cups",
+      "width": 1800,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-earlgrey-640.webp 640w, assets/web/portfolio-earlgrey-1800.webp 1800w"
+    },
+    "espressomartini": {
+      "image": "assets/web/portfolio-espressomartini-1800.webp",
+      "thumbnail": "assets/web/portfolio-espressomartini-640.webp",
+      "alt": "An espresso martini against softly glowing bar lights",
+      "width": 1699,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-espressomartini-640.webp 604w, assets/web/portfolio-espressomartini-1800.webp 1699w"
+    },
+    "marg": {
+      "image": "assets/web/portfolio-marg-1800.webp",
+      "thumbnail": "assets/web/portfolio-marg-640.webp",
+      "alt": "A pink cocktail with a citrus garnish on a sunlit wooden table",
+      "width": 1200,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-marg-640.webp 427w, assets/web/portfolio-marg-1800.webp 1200w"
+    },
+    "marg1": {
+      "image": "assets/web/portfolio-marg1-1800.webp",
+      "thumbnail": "assets/web/portfolio-marg1-640.webp",
+      "alt": "An overhead view of a red-rimmed cocktail with cucumber and citrus",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-marg1-640.webp 480w, assets/web/portfolio-marg1-1800.webp 1350w"
+    },
+    "pushpour": {
+      "image": "assets/web/portfolio-pushpour-1800.webp",
+      "thumbnail": "assets/web/portfolio-pushpour-640.webp",
+      "alt": "Two takeaway coffee cups held in front of a Push and Pour mural",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-pushpour-640.webp 480w, assets/web/portfolio-pushpour-1800.webp 1350w"
+    },
+    "smoretini": {
+      "image": "assets/web/portfolio-smoretini-1800.webp",
+      "thumbnail": "assets/web/portfolio-smoretini-640.webp",
+      "alt": "A layered cocktail topped with toasted marshmallows at a bar",
+      "width": 1080,
+      "height": 1350,
+      "srcset": "assets/web/portfolio-smoretini-640.webp 512w, assets/web/portfolio-smoretini-1800.webp 1080w"
+    },
+    "turkeysando": {
+      "image": "assets/web/portfolio-turkeysando-1800.webp",
+      "thumbnail": "assets/web/portfolio-turkeysando-640.webp",
+      "alt": "A toasted sandwich, potato wedges and a pickle on a cafe table",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-turkeysando-640.webp 480w, assets/web/portfolio-turkeysando-1800.webp 1350w"
+    },
+    "bently": {
+      "image": "assets/web/portfolio-bently-1800.webp",
+      "thumbnail": "assets/web/portfolio-bently-640.webp",
+      "alt": "An open fashion book styled with folded denim and a blue bag",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-bently-640.webp 480w, assets/web/portfolio-bently-1800.webp 1350w"
+    },
+    "boots": {
+      "image": "assets/web/portfolio-boots-1800.webp",
+      "thumbnail": "assets/web/portfolio-boots-640.webp",
+      "alt": "Patterned heeled boots resting against a paneled wall",
+      "width": 1440,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-boots-640.webp 512w, assets/web/portfolio-boots-1800.webp 1440w"
+    },
+    "fitfire": {
+      "image": "assets/web/portfolio-fitfire-1800.webp",
+      "thumbnail": "assets/web/portfolio-fitfire-640.webp",
+      "alt": "Pink sweatshirt, denim shorts and white high-top sneakers",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-fitfire-640.webp 480w, assets/web/portfolio-fitfire-1800.webp 1350w"
+    },
+    "gems": {
+      "image": "assets/web/portfolio-gems-1800.webp",
+      "thumbnail": "assets/web/portfolio-gems-640.webp",
+      "alt": "Crystals, candles and small objects displayed on wooden shelves",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-gems-640.webp 480w, assets/web/portfolio-gems-1800.webp 1350w"
+    },
+    "heyurcute": {
+      "image": "assets/web/portfolio-heyurcute-1800.webp",
+      "thumbnail": "assets/web/portfolio-heyurcute-640.webp",
+      "alt": "A pink and yellow floral tote bag on patterned bedding",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-heyurcute-640.webp 480w, assets/web/portfolio-heyurcute-1800.webp 1350w"
+    },
+    "lovewall": {
+      "image": "assets/web/portfolio-lovewall-1800.webp",
+      "thumbnail": "assets/web/portfolio-lovewall-640.webp",
+      "alt": "A woman in blue shorts beside a wall mural about love",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-lovewall-640.webp 480w, assets/web/portfolio-lovewall-1800.webp 1350w"
+    },
+    "pinkcoffee": {
+      "image": "assets/web/portfolio-pinkcoffee-1800.webp",
+      "thumbnail": "assets/web/portfolio-pinkcoffee-640.webp",
+      "alt": "Pink shirt and denim shorts with a playful stack of iced coffees",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-pinkcoffee-640.webp 480w, assets/web/portfolio-pinkcoffee-1800.webp 1350w"
+    },
+    "sunsetburg": {
+      "image": "assets/web/portfolio-sunsetburg-1800.webp",
+      "thumbnail": "assets/web/portfolio-sunsetburg-640.webp",
+      "alt": "A restaurant counter with pink sunset light through the windows",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-sunsetburg-640.webp 480w, assets/web/portfolio-sunsetburg-1800.webp 1350w"
+    },
+    "alyvia": {
+      "image": "assets/web/portfolio-alyvia-1800.webp",
+      "thumbnail": "assets/web/portfolio-alyvia-640.webp",
+      "alt": "A woman crouching on mossy rocks at the edge of a lake",
+      "width": 1196,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-alyvia-640.webp 425w, assets/web/portfolio-alyvia-1800.webp 1196w"
+    },
+    "bhaddie": {
+      "image": "assets/web/portfolio-bhaddie-1800.webp",
+      "thumbnail": "assets/web/portfolio-bhaddie-640.webp",
+      "alt": "A woman holding a disco ball outdoors against distant mountains",
+      "width": 1196,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-bhaddie-640.webp 425w, assets/web/portfolio-bhaddie-1800.webp 1196w"
+    },
+    "bronwyn": {
+      "image": "assets/web/portfolio-bronwyn-1800.webp",
+      "thumbnail": "assets/web/portfolio-bronwyn-640.webp",
+      "alt": "A woman in white sunglasses holding pastel color swatches beside her face",
+      "width": 1196,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-bronwyn-640.webp 425w, assets/web/portfolio-bronwyn-1800.webp 1196w"
+    },
+    "mermer": {
+      "image": "assets/web/portfolio-mermer-1800.webp",
+      "thumbnail": "assets/web/portfolio-mermer-640.webp",
+      "alt": "A woman resting her face on her hand in a warmly lit restaurant",
+      "width": 1196,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-mermer-640.webp 425w, assets/web/portfolio-mermer-1800.webp 1196w"
+    },
+    "mermer1": {
+      "image": "assets/web/portfolio-mermer1-1800.webp",
+      "thumbnail": "assets/web/portfolio-mermer1-640.webp",
+      "alt": "A sunlit portrait of a woman reclining with one arm above her head",
+      "width": 1242,
+      "height": 1222,
+      "srcset": "assets/web/portfolio-mermer1-640.webp 640w, assets/web/portfolio-mermer1-1800.webp 1242w"
+    },
+    "nezvisor": {
+      "image": "assets/web/portfolio-nezvisor-1800.webp",
+      "thumbnail": "assets/web/portfolio-nezvisor-640.webp",
+      "alt": "Two people in pink hoodies and white visors beneath a vivid sunset sky",
+      "width": 1242,
+      "height": 1608,
+      "srcset": "assets/web/portfolio-nezvisor-640.webp 494w, assets/web/portfolio-nezvisor-1800.webp 1242w"
+    },
+    "oregoned": {
+      "image": "assets/web/portfolio-oregoned-1800.webp",
+      "thumbnail": "assets/web/portfolio-oregoned-640.webp",
+      "alt": "A woman leaning into the frame beneath a sunny, cloud-filled sky",
+      "width": 1350,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-oregoned-640.webp 480w, assets/web/portfolio-oregoned-1800.webp 1350w"
+    },
+    "tanatana": {
+      "image": "assets/web/portfolio-tanatana-1800.webp",
+      "thumbnail": "assets/web/portfolio-tanatana-640.webp",
+      "alt": "A smiling woman with windblown hair resting her chin on her hand",
+      "width": 1196,
+      "height": 1800,
+      "srcset": "assets/web/portfolio-tanatana-640.webp 425w, assets/web/portfolio-tanatana-1800.webp 1196w"
+    },
+    "hotlevis": {
+      "image": "assets/web/hotlevis.webp",
+      "thumbnail": "assets/web/hotlevis.webp",
+      "alt": "Editorial denim detail",
+      "width": 1334,
+      "height": 1800
+    },
+    "sandwitch": {
+      "image": "assets/web/sandwitch.webp",
+      "thumbnail": "assets/web/sandwitch.webp",
+      "alt": "Sandwich and fries",
+      "width": 1350,
+      "height": 1800
+    },
+    "starterrun1": {
+      "image": "assets/web/starterrun1.webp",
+      "thumbnail": "assets/web/starterrun1.webp",
+      "alt": "Group of runners gathered outdoors",
+      "width": 1400,
+      "height": 933
+    },
+    "3sunnies": {
+      "image": "assets/web/3sunnies.webp",
+      "thumbnail": "assets/web/3sunnies.webp",
+      "alt": "Sunglasses portrait against a sunlit wall",
+      "width": 1400,
+      "height": 930
+    }
+  },
+  "collections": [
+    {
+      "slug": "style",
+      "title": "Style, story, texture.",
+      "nav": "Style + details",
+      "intro": "The little things that make it yours.",
+      "cover": "hotlevis",
+      "layout": "tall",
+      "items": [
+        "hotlevis",
+        "fit",
+        "vogue",
+        "bently",
+        "powerpuff",
+        "boots",
+        "clothingrack",
+        "fitfire",
+        "heyurcute",
+        "gems",
+        "lovewall"
+      ]
+    },
+    {
+      "slug": "food-drink",
+      "title": "Food worth a detour.",
+      "nav": "Food + drink",
+      "intro": "Something to sip. Something to savor. A reason to stay a little longer.",
+      "cover": "sandwitch",
+      "layout": "",
+      "items": [
+        "earlgrey",
+        "coffeefame",
+        "marg1",
+        "turkeysando",
+        "chai",
+        "milkdonut",
+        "coolgirlfame",
+        "charcuteri",
+        "marg",
+        "pushpour",
+        "smoretini",
+        "pinkcoffee",
+        "espressomartini",
+        "sunsetburg",
+        "sandwitch"
+      ]
+    },
+    {
+      "slug": "community",
+      "title": "Community in motion.",
+      "nav": "Community",
+      "intro": "Good company. Shared moments. Better together.",
+      "cover": "starterrun1",
+      "layout": "",
+      "items": [
+        "starterrun1",
+        "starbeach",
+        "bkkardi",
+        "jonb"
+      ]
+    },
+    {
+      "slug": "outside",
+      "title": "Outside is the point.",
+      "nav": "Places + travel",
+      "intro": "A change of scenery. A little room to breathe.",
+      "cover": "3sunnies",
+      "layout": "wide",
+      "items": [
+        "montenegro",
+        "oregonhouse",
+        "floridapool",
+        "mountainfarm",
+        "met",
+        "home-jpg",
+        "lakeroosevelt",
+        "3sunnies"
+      ]
+    },
+    {
+      "slug": "after-dark",
+      "title": "After dark.",
+      "nav": "After dark",
+      "intro": "When the lights go down, the feeling stays.",
+      "cover": "champagnelanes",
+      "layout": "",
+      "items": [
+        "champagnelanes",
+        "asapyuh",
+        "espressomartini",
+        "asapyuh1",
+        "smoretini",
+        "mermer"
+      ]
+    },
+    {
+      "slug": "portraits",
+      "title": "A little more you.",
+      "nav": "Portraits",
+      "intro": "Faces, feeling, and the moments in between.",
+      "cover": "bronwyn",
+      "layout": "wide",
+      "items": [
+        "bronwyn",
+        "bhaddie",
+        "tanatana",
+        "mermer1",
+        "alyvia",
+        "nezvisor",
+        "mermer",
+        "oregoned"
+      ]
+    }
+  ]
+}

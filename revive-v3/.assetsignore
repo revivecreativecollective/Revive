@@ -2,6 +2,7 @@ README.md
 ASSET-NOTES.md
 content-editor.html
 content-editor.js
+build-portfolio.cjs
 wrangler.jsonc
 .DS_Store
 **/.DS_Store

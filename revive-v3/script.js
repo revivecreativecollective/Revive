@@ -47,8 +47,16 @@
     for (const item of content.portfolio) {
       if (typeof item.image !== 'string' || !item.image.startsWith('assets/') || item.image.includes('..')) continue;
       const figure = document.createElement('figure'); if (['wide', 'tall'].includes(item.layout)) figure.className = item.layout;
-      const image = document.createElement('img'); image.src = item.image; image.alt = item.alt || ''; image.loading = 'lazy'; image.decoding = 'async'; image.width = 1000; image.height = item.layout === 'wide' ? 625 : 1250;
-      const caption = document.createElement('figcaption'); caption.textContent = item.caption || ''; figure.append(image, caption); fragment.append(figure);
+      const image = document.createElement('img'); image.src = item.thumbnail || item.image; image.alt = item.alt || ''; image.loading = 'lazy'; image.decoding = 'async'; image.width = item.width || 1000; image.height = item.height || 1250;
+      if (item.srcset) { image.srcset = item.srcset; image.sizes = item.layout === 'wide' ? '(max-width: 760px) 88vw, 56vw' : '(max-width: 760px) 85vw, 28vw'; }
+      const caption = document.createElement('figcaption');
+      const title = document.createElement('span'); title.textContent = item.caption || ''; caption.append(title);
+      if (/^work-[a-z-]+\.html$/.test(item.href || '')) {
+        const link = document.createElement('a'); link.className = 'collection-link'; link.href = item.href;
+        const cue = document.createElement('span'); cue.className = 'collection-cue'; cue.textContent = 'View collection' + (item.count ? ` · ${item.count} photos` : '') + ' ↗'; caption.append(cue);
+        link.append(image, caption); figure.append(link);
+      } else { figure.append(image, caption); }
+      fragment.append(figure);
     }
     if (fragment.childElementCount) gallery.replaceChildren(fragment);
   }

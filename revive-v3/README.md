@@ -1,12 +1,20 @@
 # Revive V3 — nature revision
 
-## Release record — September 9, 2026 (Phoenix)
+## Current site — September 16, 2026 (Phoenix)
+
+Production: https://revivecreativecollective.com/ (also www). GitHub `main/revive-v3` is the source of truth and auto-deploys to the existing `revive-v3` Worker. No new site, V4 folder, or DNS changes are needed for portfolio updates.
+
+The portfolio now has six full-page collections: Style + details, Food + drink, Community, Places + travel, After dark, and Portraits. The September portfolio ZIP supplied 46 files: 45 unique photographs plus one duplicate (`jonb1.JPG` matches `jonb.JPG`). All 45 unique photographs are included. `champagnelanes.JPG` is the After Dark homepage cover and first image. Some photographs appear in more than one relevant collection.
+
+New photographs have 640px and 1800px long-edge WebP copies (without upscaling); responsive image selection, lazy loading, descriptive alternative text, and a keyboard-accessible full-screen viewer are included. Original files are unchanged. Metadata is not copied into the WebP exports. The previously approved About copy, portrait, Typeform, and atmospheric animation are preserved.
+
+## Historical release record — September 9, 2026 (superseded)
 
 Live site: https://revive-v3.ed6schu.workers.dev/
 
 Cloudflare version: `4c5c9f1f-d5db-4537-ba30-93c165083bf6`; production deployment: `b086e246-b184-49c2-8603-718c4238a195` at 100% traffic. Previous version retained for rollback: `a87aeafa-aa82-4ad7-be57-37fe1917dbbf`.
 
-GitHub has NOT been updated by this release. Before triggering another Git-based deployment, copy this package into `revive-v3` and confirm the build root described below. Custom-domain and email DNS records were not changed.
+That September 9 direct release initially required a GitHub sync. GitHub has since been synced, the custom domains attached, and Git auto-deployment configured. The version IDs in this historical section are not the current release.
 
 Verification: 21 published files checked byte-for-byte, portfolio asset paths and HTML links checked, 404 and content cache headers checked. Desktop and 390px browser previews reviewed; cloud/water canvases load with static fallbacks and pause controls. This is not a physical-iPhone device test.
 
@@ -28,11 +36,17 @@ Once connected, edit questions inside the SAME Typeform and click **Publish edit
 
 ### Portfolio
 
-1. Keep original photographs safely on your computer. Export new website copies ideally around 1400–1800 pixels on the long edge and under 1 MB. JPG/JPEG/PNG/WebP work.
-2. Upload them to GitHub → Revive → `revive-v3/assets/portfolio-photos`.
-3. Open the included local `content-editor.html`, click **Add a photo**, and type its exact path, description, caption, and shape. For example: `assets/portfolio-photos/my-photo.jpg`. Capitalization matters.
-4. Download `content.js` and replace the existing file in `revive-v3`.
-5. Redeploy the existing Cloudflare site. This is a content update, not a new V4 folder or redesign. If Git auto-deploy is correctly configured, the commit triggers it.
+The simplest workflow for Eden is to supply a photo folder or ZIP and name any required placements. Adding images remains a content update to the existing website.
+
+For code-based updates:
+
+1. Keep original photographs safely outside the deploy folder. Create web-ready copies and place them in `assets/web`.
+2. Add their paths, descriptive alt text, dimensions, and optional responsive `srcset` to `photos` in `portfolio.json`.
+3. Add each photo's key to the appropriate collection's ordered `items` list. A photo may appear in multiple collections. The `cover` key selects the homepage image.
+4. Run `node build-portfolio.cjs` locally from this folder. It refreshes six standalone HTML pages, homepage fallback cards, counts, and `content.js`. No package installation is required. This generator is excluded from public assets; the Cloudflare build command stays blank because generated pages are committed.
+5. Preview locally and upload the changed files and optimized images to the existing `revive-v3` folder on GitHub. Committing to `main` triggers the same site's deployment.
+
+The local content helper edits homepage covers and the Typeform link; it preserves collection links and responsive metadata but does not edit full gallery contents. Use `portfolio.json` and the generator for collection changes. The photographs and links remain browseable without JavaScript; JavaScript adds the full-screen viewer.
 
 The content helper is local-only and excluded from Wrangler uploads. It does not upload photos, edit GitHub, save changes automatically, or act as an online admin system. Open the latest downloaded copy of the site before editing so the helper loads the latest content.
 
@@ -50,16 +64,16 @@ Upload this folder's CONTENTS into the existing GitHub `revive-v3` folder. Do no
 
 Previous GitHub files were split between `revive-v3-upload` (HTML/CSS) and `revive-v3` (photos). This package is self-contained and should be kept together in `revive-v3`.
 
-The existing Worker address is `https://revive-v3.ed6schu.workers.dev`. Attaching `revivecreativecollective.com` is a separate deployment setting and was not assumed by this build. A direct Cloudflare release does not automatically update GitHub; keep the Git repository in sync before triggering another Git build.
+The existing Worker address is `https://revive-v3.ed6schu.workers.dev`. Both `revivecreativecollective.com` and `www.revivecreativecollective.com` are attached. A direct Cloudflare release does not automatically update GitHub; normal content updates should go through GitHub.
 
 ## Included
 
 - Approved wording and new Eden portrait.
 - Photographic cloud sky, independently drifting organic cloud layers, a shooting star every 30 seconds.
 - Animated blue water and Eden’s Arizona desert closing photograph with subtly drifting cloud bands; mountains, plants and text remain still.
-- A conversation sky transitioning from sunset to night over about 90 seconds, holding and returning gently.
+- Inquiry buttons open the published Typeform; old inquiry-page links forward there with an email fallback.
 - Motion pause control (remembered on the device), reduced-motion support, off-screen water rendering pause, keyboard-accessible menu and accordion, static image fallbacks.
-- `content.js` is the single editable source for Typeform and the portfolio. The HTML gallery is also present as a no-JavaScript fallback; if you want new photos reflected in that fallback, ask for the fallback markup to be refreshed too.
+- `portfolio.json` holds collection data; `build-portfolio.cjs` generates static gallery pages and homepage cards. `content.js` holds runtime homepage cards and the Typeform URL.
 - Existing photos have smaller WebP copies; no AI client work or testimonials were added.
 
 No newsletter, analytics tracker, payment or booking system has been activated. Inquiry links use Eden’s published Typeform; the supplied business email remains available in the footer.
