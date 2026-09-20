@@ -1,10 +1,12 @@
 # Revive V3 — nature revision
 
-## Current site — September 16, 2026 (Phoenix)
+## Current site — September 18, 2026 (Phoenix)
 
 Production: https://revivecreativecollective.com/ (also www). GitHub `main/revive-v3` is the source of truth and auto-deploys to the existing `revive-v3` Worker. No new site, V4 folder, or DNS changes are needed for portfolio updates.
 
-The portfolio now has six full-page collections: Style + details, Food + drink, Community, Places + travel, After dark, and Portraits. The September portfolio ZIP supplied 46 files: 45 unique photographs plus one duplicate (`jonb1.JPG` matches `jonb.JPG`). All 45 unique photographs are included. `champagnelanes.JPG` is the After Dark homepage cover and first image. Some photographs appear in more than one relevant collection.
+The portfolio has four full-page collections, matching Eden's `website portfolio .pdf`: **Clothing / Beauty, Destination, Food & Drink, and Event**. Homepage collection cards and the opening of each gallery use layered photo collages based on the four reference pages. Phones use a roomier, staggered arrangement inside the full galleries. Photos can still be opened individually in the larger viewer.
+
+All 45 unique photographs from the September ZIP are included (the duplicate `jonb1.JPG` was omitted). Three additional images were extracted from Eden's PDF: the brunch plate, group celebration, and transparent coffee-person cutout. Together with four earlier website photos, the galleries contain 52 images: 16 Clothing / Beauty, 11 Destination, 16 Food & Drink, and 9 Event. `champagnelanes.JPG` remains a featured photograph in Event. Old Style/Portraits links forward to Clothing / Beauty; old Outside links to Destination; old Community/After Dark links to Event. Nothing was removed from the original photo archive.
 
 New photographs have 640px and 1800px long-edge WebP copies (without upscaling); responsive image selection, lazy loading, descriptive alternative text, and a keyboard-accessible full-screen viewer are included. Original files are unchanged. Metadata is not copied into the WebP exports. The previously approved About copy, portrait, Typeform, and atmospheric animation are preserved.
 
@@ -43,10 +45,10 @@ For code-based updates:
 1. Keep original photographs safely outside the deploy folder. Create web-ready copies and place them in `assets/web`.
 2. Add their paths, descriptive alt text, dimensions, and optional responsive `srcset` to `photos` in `portfolio.json`.
 3. Add each photo's key to the appropriate collection's ordered `items` list. A photo may appear in multiple collections. The `cover` key selects the homepage image.
-4. Run `node build-portfolio.cjs` locally from this folder. It refreshes six standalone HTML pages, homepage fallback cards, counts, and `content.js`. No package installation is required. This generator is excluded from public assets; the Cloudflare build command stays blank because generated pages are committed.
+4. Run `node build-portfolio.cjs` locally from this folder. It refreshes the four standalone gallery pages, legacy forwarding pages, homepage fallback collages, counts, and `content.js`. No package installation is required. This generator is excluded from public assets; the Cloudflare build command stays blank because generated pages are committed. Each collection's `collage` list controls the opening composition: photo key, percentage position/size, stacking order, and optional transparent-cutout treatment. Extra `items` appear below the opening collage. Bump the asset version query in the generator and homepage whenever changing shared scripts/styles.
 5. Preview locally and upload the changed files and optimized images to the existing `revive-v3` folder on GitHub. Committing to `main` triggers the same site's deployment.
 
-The local content helper edits homepage covers and the Typeform link; it preserves collection links and responsive metadata but does not edit full gallery contents. Use `portfolio.json` and the generator for collection changes. The photographs and links remain browseable without JavaScript; JavaScript adds the full-screen viewer.
+The local content helper can edit the Typeform link and collection titles while preserving collage metadata. Its single-cover controls do not change collage compositions. Use `portfolio.json` and the generator for all gallery changes. The photographs and links remain browseable without JavaScript; JavaScript adds the full-screen viewer. This is not a browser-based photo-upload dashboard; uploading a picture alone does not automatically place it into a gallery.
 
 The content helper is local-only and excluded from Wrangler uploads. It does not upload photos, edit GitHub, save changes automatically, or act as an online admin system. Open the latest downloaded copy of the site before editing so the helper loads the latest content.
 

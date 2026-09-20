@@ -387,46 +387,252 @@
       "alt": "Sunglasses portrait against a sunlit wall",
       "width": 1400,
       "height": 930
+    },
+    "brunch": {
+      "image": "assets/web/portfolio-brunch-1800.webp",
+      "thumbnail": "assets/web/portfolio-brunch-640.webp",
+      "alt": "Eggs Benedict and leafy greens on a cafe table",
+      "width": 819,
+      "height": 1042,
+      "srcset": "assets/web/portfolio-brunch-640.webp 503w, assets/web/portfolio-brunch-1800.webp 819w"
+    },
+    "celebration": {
+      "image": "assets/web/portfolio-celebration-1800.webp",
+      "thumbnail": "assets/web/portfolio-celebration-640.webp",
+      "alt": "Friends dressed up and celebrating together",
+      "width": 960,
+      "height": 641,
+      "srcset": "assets/web/portfolio-celebration-640.webp 640w, assets/web/portfolio-celebration-1800.webp 960w"
+    },
+    "coffee-cutout": {
+      "image": "assets/web/portfolio-coffee-cutout-1800.webp",
+      "thumbnail": "assets/web/portfolio-coffee-cutout-640.webp",
+      "alt": "A person in a Have More Fun cap holding an iced coffee",
+      "width": 1001,
+      "height": 1500,
+      "srcset": "assets/web/portfolio-coffee-cutout-640.webp 427w, assets/web/portfolio-coffee-cutout-1800.webp 1001w"
     }
   },
   "collections": [
     {
-      "slug": "style",
-      "title": "Style, story, texture.",
-      "nav": "Style + details",
-      "intro": "The little things that make it yours.",
-      "cover": "hotlevis",
-      "layout": "tall",
+      "slug": "clothing-beauty",
+      "title": "Clothing / Beauty",
+      "nav": "Clothing / Beauty",
+      "intro": "Style, story, texture.",
+      "cover": "fit",
+      "theme": "style",
+      "collage": [
+        {
+          "photo": "fit",
+          "x": 0,
+          "y": 0,
+          "w": 26,
+          "h": 62
+        },
+        {
+          "photo": "clothingrack",
+          "x": 22.7,
+          "y": 0,
+          "w": 34.5,
+          "h": 29.5
+        },
+        {
+          "photo": "heyurcute",
+          "x": 73,
+          "y": 0,
+          "w": 25,
+          "h": 50
+        },
+        {
+          "photo": "bently",
+          "x": 28,
+          "y": 32.5,
+          "w": 22.5,
+          "h": 63.5
+        },
+        {
+          "photo": "boots",
+          "x": 52.4,
+          "y": 23.7,
+          "w": 16.5,
+          "h": 35.2,
+          "layer": 3
+        },
+        {
+          "photo": "vogue",
+          "x": 62.2,
+          "y": 53.5,
+          "w": 35,
+          "h": 46.5
+        },
+        {
+          "photo": "fitfire",
+          "x": 4.5,
+          "y": 64.2,
+          "w": 17,
+          "h": 35.8
+        }
+      ],
       "items": [
-        "hotlevis",
         "fit",
-        "vogue",
-        "bently",
-        "powerpuff",
-        "boots",
         "clothingrack",
-        "fitfire",
         "heyurcute",
+        "bently",
+        "boots",
+        "vogue",
+        "fitfire",
+        "hotlevis",
+        "powerpuff",
         "gems",
+        "bronwyn",
+        "bhaddie",
+        "tanatana",
+        "mermer1",
+        "nezvisor",
+        "mermer"
+      ]
+    },
+    {
+      "slug": "destination",
+      "title": "Destination",
+      "nav": "Destination",
+      "intro": "Outside is the point.",
+      "cover": "montenegro",
+      "theme": "destination",
+      "collage": [
+        {
+          "photo": "home-jpg",
+          "x": 0,
+          "y": 0,
+          "w": 38.1,
+          "h": 100
+        },
+        {
+          "photo": "lakeroosevelt",
+          "x": 5.6,
+          "y": 15.2,
+          "w": 27,
+          "h": 64,
+          "layer": 2
+        },
+        {
+          "photo": "floridapool",
+          "x": 38.1,
+          "y": 0,
+          "w": 20.7,
+          "h": 52.3
+        },
+        {
+          "photo": "mountainfarm",
+          "x": 58.8,
+          "y": 0,
+          "w": 19.6,
+          "h": 52.3
+        },
+        {
+          "photo": "oregonhouse",
+          "x": 78.4,
+          "y": 0,
+          "w": 21.6,
+          "h": 52.3
+        },
+        {
+          "photo": "met",
+          "x": 38.1,
+          "y": 52.3,
+          "w": 21.7,
+          "h": 47.7
+        },
+        {
+          "photo": "montenegro",
+          "x": 59.8,
+          "y": 52.3,
+          "w": 40.2,
+          "h": 47.7
+        }
+      ],
+      "items": [
+        "home-jpg",
+        "lakeroosevelt",
+        "floridapool",
+        "mountainfarm",
+        "oregonhouse",
+        "met",
+        "montenegro",
+        "3sunnies",
+        "alyvia",
+        "oregoned",
         "lovewall"
       ]
     },
     {
       "slug": "food-drink",
-      "title": "Food worth a detour.",
-      "nav": "Food + drink",
-      "intro": "Something to sip. Something to savor. A reason to stay a little longer.",
-      "cover": "sandwitch",
-      "layout": "",
+      "title": "Food & Drink",
+      "nav": "Food & Drink",
+      "intro": "Taste it through the screen.",
+      "cover": "earlgrey",
+      "theme": "food",
+      "collage": [
+        {
+          "photo": "marg1",
+          "x": 0,
+          "y": 0,
+          "w": 28.3,
+          "h": 46
+        },
+        {
+          "photo": "brunch",
+          "x": 28.3,
+          "y": 0,
+          "w": 23.1,
+          "h": 46
+        },
+        {
+          "photo": "coolgirlfame",
+          "x": 51.4,
+          "y": 0,
+          "w": 24.5,
+          "h": 46
+        },
+        {
+          "photo": "charcuteri",
+          "x": 75.9,
+          "y": 0,
+          "w": 24.1,
+          "h": 100
+        },
+        {
+          "photo": "earlgrey",
+          "x": 0,
+          "y": 46,
+          "w": 28.3,
+          "h": 54
+        },
+        {
+          "photo": "coffeefame",
+          "x": 28.3,
+          "y": 46,
+          "w": 23.1,
+          "h": 54
+        },
+        {
+          "photo": "turkeysando",
+          "x": 51.4,
+          "y": 46,
+          "w": 24.5,
+          "h": 54
+        }
+      ],
       "items": [
+        "marg1",
+        "brunch",
+        "coolgirlfame",
+        "charcuteri",
         "earlgrey",
         "coffeefame",
-        "marg1",
         "turkeysando",
         "chai",
         "milkdonut",
-        "coolgirlfame",
-        "charcuteri",
         "marg",
         "pushpour",
         "smoretini",
@@ -437,70 +643,69 @@
       ]
     },
     {
-      "slug": "community",
-      "title": "Community in motion.",
-      "nav": "Community",
-      "intro": "Good company. Shared moments. Better together.",
-      "cover": "starterrun1",
-      "layout": "",
-      "items": [
-        "starterrun1",
-        "starbeach",
-        "bkkardi",
-        "jonb"
-      ]
-    },
-    {
-      "slug": "outside",
-      "title": "Outside is the point.",
-      "nav": "Places + travel",
-      "intro": "A change of scenery. A little room to breathe.",
-      "cover": "3sunnies",
-      "layout": "wide",
-      "items": [
-        "montenegro",
-        "oregonhouse",
-        "floridapool",
-        "mountainfarm",
-        "met",
-        "home-jpg",
-        "lakeroosevelt",
-        "3sunnies"
-      ]
-    },
-    {
-      "slug": "after-dark",
-      "title": "After dark.",
-      "nav": "After dark",
-      "intro": "When the lights go down, the feeling stays.",
+      "slug": "event",
+      "title": "Event",
+      "nav": "Event",
+      "intro": "Good people. Real moments.",
       "cover": "champagnelanes",
-      "layout": "",
+      "theme": "event",
+      "collage": [
+        {
+          "photo": "champagnelanes",
+          "x": 39.8,
+          "y": 0,
+          "w": 31.5,
+          "h": 69
+        },
+        {
+          "photo": "celebration",
+          "x": 0,
+          "y": 0,
+          "w": 33.9,
+          "h": 40.5
+        },
+        {
+          "photo": "starbeach",
+          "x": 0,
+          "y": 40.5,
+          "w": 28.1,
+          "h": 59.5
+        },
+        {
+          "photo": "jonb",
+          "x": 71.3,
+          "y": 32.2,
+          "w": 28.7,
+          "h": 67.8
+        },
+        {
+          "photo": "coffee-cutout",
+          "x": 28,
+          "y": 35,
+          "w": 25,
+          "h": 65,
+          "layer": 3,
+          "cutout": true
+        }
+      ],
       "items": [
         "champagnelanes",
+        "celebration",
+        "starbeach",
+        "jonb",
+        "coffee-cutout",
+        "starterrun1",
+        "bkkardi",
         "asapyuh",
-        "espressomartini",
-        "asapyuh1",
-        "smoretini",
-        "mermer"
-      ]
-    },
-    {
-      "slug": "portraits",
-      "title": "A little more you.",
-      "nav": "Portraits",
-      "intro": "Faces, feeling, and the moments in between.",
-      "cover": "bronwyn",
-      "layout": "wide",
-      "items": [
-        "bronwyn",
-        "bhaddie",
-        "tanatana",
-        "mermer1",
-        "alyvia",
-        "nezvisor",
-        "mermer",
-        "oregoned"
+        "asapyuh1"
       ]
     }
-  ]
+  ],
+  "aliases": {
+    "style": "clothing-beauty",
+    "portraits": "clothing-beauty",
+    "outside": "destination",
+    "community": "event",
+    "after-dark": "event"
+  }
 }

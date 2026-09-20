@@ -1,5 +1,5 @@
 const fs=require('node:fs'),path=require('node:path');
-const {collections,photos}=JSON.parse(fs.readFileSync(path.join(__dirname,'portfolio.json'),'utf8'));
+const {collections,photos,aliases={}}=JSON.parse(fs.readFileSync(path.join(__dirname,'portfolio.json'),'utf8'));
 const root=__dirname;
 const esc=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
 const changed={};
@@ -11,11 +11,15 @@ if(typeof inquiry!=='string'||!inquiry.startsWith('https://'))throw new Error('S
 (async()=>{
  const img=(p,sizes,priority=false)=>`<img src="${p.thumbnail}"${p.srcset?` srcset="${p.srcset}" sizes="${sizes}"`:''} alt="${esc(p.alt)}" width="${p.width}" height="${p.height}" ${priority?'fetchpriority="high"':'loading="lazy"'} decoding="async">`;
  const photo=(slug,index,total,featured=false)=>{const p=photos[slug];return `<figure class="collection-photo${featured?' collection-feature':''}"><a class="photo-open" href="${p.image}" data-photo aria-label="${esc('View photo '+(index+1)+' of '+total+': '+p.alt)}">${img(p,featured?'(max-width: 760px) 88vw, 48vw':'(max-width: 600px) 88vw, (max-width: 1000px) 43vw, 28vw',featured)}<span class="photo-expand" aria-hidden="true">View larger ↗</span></a><figcaption>${String(index+1).padStart(2,'0')} / ${String(total).padStart(2,'0')}</figcaption></figure>`};
- const config={typeformUrl:inquiry,portfolio:collections.map(c=>({...photos[c.cover],caption:c.title,layout:c.layout,href:`work-${c.slug}.html`,count:c.items.length}))};
+ const collage=(c,interactive=false)=>`<div class="photo-collage collage-${c.theme}${interactive?' collage-interactive':''}">${c.collage.map((spot,index)=>{
+  const p=photos[spot.photo],tag=interactive?'a':'span';
+  const style=`--x:${spot.x}%;--y:${spot.y}%;--w:${spot.w}%;--h:${spot.h}%;--layer:${spot.layer||1}`;
+  return `<${tag} class="collage-photo${spot.cutout?' collage-cutout':''}" style="${style}"${interactive?` href="${p.image}" data-photo aria-label="View photograph: ${esc(p.alt)}"`:''}>${img(interactive?p:{...p,alt:''},interactive?'(max-width: 700px) 80vw, 35vw':'(max-width: 760px) 35vw, 20vw',interactive&&index<3)}</${tag}>`;
+ }).join('')}</div>`;
+ const config={typeformUrl:inquiry,portfolio:collections.map(c=>({...photos[c.cover],caption:c.title,theme:c.theme,collage:c.collage.map(spot=>({...spot,...photos[spot.photo]})),href:`work-${c.slug}.html`,count:c.items.length}))};
  changed['content.js']='/* Homepage collections + inquiry link. Full gallery pages are generated from portfolio.json. */\nwindow.REVIVE_CONTENT = '+JSON.stringify(config,null,2)+';\n';
- changed['portfolio.json']=JSON.stringify({photos,collections},null,2)+'\n';
- const cards=config.portfolio.map(c=>`        <figure${c.layout?` class="${c.layout}"`:''}><a class="collection-link" href="${c.href}">${img(c,'(max-width: 760px) 85vw, 50vw')}<figcaption><span>${esc(c.caption)}</span><span class="collection-cue">View collection · ${c.count} photos <span aria-hidden="true">↗</span></span></figcaption></a></figure>`).join('\n');
- changed['index.html']=fs.readFileSync(path.join(root,'index.html'),'utf8').replace(/(<div class="gallery" id="portfolioGallery">)[\s\S]*?(\n      <\/div>)/,'$1\n'+cards+'$2');
+ const cards=collections.map(c=>`        <a class="collection-link" href="work-${c.slug}.html" aria-label="Explore ${esc(c.title)}"><figure>${collage(c)}<figcaption><span>${esc(c.title)}</span><span class="collection-cue">Explore collection · ${c.items.length} photos <span aria-hidden="true">↗</span></span></figcaption></figure></a>`).join('\n');
+ changed['index.html']=fs.readFileSync(path.join(root,'index.html'),'utf8').replace(/(<div class="gallery(?: collection-overview)?" id="portfolioGallery">)[\s\S]*?(\n      <\/div>)/,'<div class="gallery collection-overview" id="portfolioGallery">\n'+cards+'$2');
  for(const [index,c] of collections.entries()){
   const next=collections[(index+1)%collections.length],first=photos[c.items[0]];
   const nav=collections.map(x=>`<a href="work-${x.slug}.html"${x.slug===c.slug?' aria-current="page"':''}>${esc(x.nav)}</a>`).join('');
@@ -25,27 +29,26 @@ if(typeof inquiry!=='string'||!inquiry.startsWith('https://'))throw new Error('S
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(c.title)} — Revive Creative Collective</title>
   <meta name="description" content="${esc(c.intro)} Explore ${esc(c.nav.toLowerCase())} photography by Eden at Revive Creative Collective.">
-  <meta name="theme-color" content="#152837">
+  <meta name="theme-color" content="#fff8ee">
   <link rel="canonical" href="https://revivecreativecollective.com/work-${c.slug}">
   <meta property="og:title" content="${esc(c.title)} — Revive Creative Collective"><meta property="og:type" content="website"><meta property="og:description" content="${esc(c.intro)}"><meta property="og:image" content="https://revivecreativecollective.com/${first.image}">
   <link rel="icon" href="assets/brand/revive-r-blue.png">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=portfolio-20260916"><link rel="stylesheet" href="portfolio.css?v=portfolio-20260916">
-  <script src="content.js?v=portfolio-20260916" defer></script><script src="script.js?v=portfolio-20260916" defer></script><script src="portfolio.js?v=portfolio-20260916" defer></script>
+  <link rel="stylesheet" href="styles.css?v=collage-20260918"><link rel="stylesheet" href="portfolio.css?v=collage-20260918"><link rel="stylesheet" href="collage.css?v=collage-20260918">
+  <script src="content.js?v=collage-20260918" defer></script><script src="script.js?v=collage-20260918" defer></script><script src="portfolio.js?v=collage-20260918" defer></script>
 </head>
-<body class="collection-page">
+<body class="collection-page collage-page">
   <a class="skip-link" href="#collection">Skip to photographs</a>
   <header class="site-header"><a class="wordmark" href="index.html" aria-label="Revive home">REVIVE<span>Creative Collective</span></a><div class="header-actions"><a class="back-link" href="index.html#work">← All collections</a><a class="header-inquire" data-inquiry-link href="${inquiry}">Inquire <span aria-hidden="true">↗</span></a></div></header>
   <main id="collection">
-    <section class="collection-intro" aria-labelledby="collectionTitle">
-      <div class="collection-copy"><p class="kicker">The collections / ${String(index+1).padStart(2,'0')}</p><h1 id="collectionTitle">${esc(c.title)}</h1><p class="collection-description">${esc(c.intro)}</p><p class="collection-count">${c.items.length} photographs · By Eden</p><a class="text-link" href="#photographs">Take a look around <span aria-hidden="true">↓</span></a></div>
-      ${photo(c.items[0],0,c.items.length,true)}
-    </section>
-    <section class="collection-body" id="photographs" aria-label="More ${esc(c.nav.toLowerCase())} photographs"><div class="collection-grid">
-      ${c.items.slice(1).map((slug,i)=>photo(slug,i+1,c.items.length)).join('\n      ')}
+    <section class="collage-heading" aria-labelledby="collectionTitle"><div><p class="kicker">The collections / ${String(index+1).padStart(2,'0')}</p><h1 id="collectionTitle">${esc(c.title)}</h1></div><p class="collection-description">${esc(c.intro)}<span>${c.items.length} photographs · By Eden</span></p></section>
+    <nav class="collection-nav collection-nav-top" aria-label="Portfolio collections">${nav}</nav>
+    <section class="collage-board" aria-label="${esc(c.title)} photo collage">${collage(c,true)}</section>
+    <section class="collection-body" id="photographs" aria-label="More ${esc(c.nav.toLowerCase())} photographs"><p class="kicker more-photos-label">A little more to explore</p><div class="collection-grid">
+      ${c.items.filter(slug=>!c.collage.some(spot=>spot.photo===slug)).map(slug=>photo(slug,c.items.indexOf(slug),c.items.length)).join('\n      ')}
     </div></section>
-    <section class="collection-end" aria-labelledby="moreTitle"><p class="kicker">A little more to explore</p><h2 id="moreTitle">${esc(next.title)}</h2><a class="pill" href="work-${next.slug}.html">Next collection <span aria-hidden="true">↗</span></a><nav class="collection-nav" aria-label="Portfolio collections">${nav}</nav></section>
+    <section class="collection-end" aria-labelledby="moreTitle"><p class="kicker">Keep exploring</p><h2 id="moreTitle">${esc(next.title)}</h2><a class="pill" href="work-${next.slug}.html">Next collection <span aria-hidden="true">↗</span></a></section>
     <section class="collection-inquire"><h2>Let’s curate <em>your world.</em></h2><a class="pill solid" data-inquiry-link href="${inquiry}">Start something <span aria-hidden="true">↗</span></a></section>
   </main>
   <footer><a class="footer-brand" href="index.html">REVIVE</a><span>A breath of fresh air.</span><a href="mailto:eden@revivecreativecollective.com">eden@revivecreativecollective.com</a></footer>
@@ -53,6 +56,10 @@ if(typeof inquiry!=='string'||!inquiry.startsWith('https://'))throw new Error('S
 </body>
 </html>
 `;
+ }
+ for(const [oldSlug,newSlug] of Object.entries(aliases)){
+  const title=collections.find(c=>c.slug===newSlug).title;
+  changed[`work-${oldSlug}.html`]=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="refresh" content="0;url=work-${newSlug}.html"><link rel="canonical" href="https://revivecreativecollective.com/work-${newSlug}"><title>${esc(title)} — Revive Creative Collective</title></head><body><p>This collection has a new home: <a href="work-${newSlug}.html">${esc(title)}</a>.</p></body></html>\n`;
  }
  for(const [file,content] of Object.entries(changed)) fs.writeFileSync(path.join(root,file),content);
  console.log(`Updated ${collections.length} galleries, homepage links and content.js.`);

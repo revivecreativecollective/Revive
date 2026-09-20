@@ -1,0 +1,66 @@
+/* Photo-led compositions, based on Eden's four-page portfolio reference. */
+.photo-collage { position: relative; isolation: isolate; aspect-ratio: 16 / 9; background: #f7eff9; }
+.collage-photo { position: absolute; left: var(--x); top: var(--y); width: var(--w); height: var(--h); z-index: var(--layer, 1); display: block; }
+.photo-collage .collage-photo img { display: block; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; background: transparent; }
+.photo-collage .collage-cutout img { object-fit: contain; object-position: bottom; }
+.collage-destination { background: #abcdec; }
+.collage-food { background: #eae5dd; }
+.collage-event { background: #fff; }
+.collection-overview { grid-template-columns: 1fr 1fr; gap: 55px 32px; }
+.collection-overview .collection-link { min-width: 0; }
+.collection-overview .collection-link img { filter: none; }
+.collection-overview figcaption { margin-top: 21px; }
+.collection-overview .collection-link figcaption > span:first-child { font-size: clamp(27px, 2.8vw, 42px); }
+.collection-overview .collection-cue { padding-top: 5px; }
+.collection-overview .collection-link:hover .photo-collage { outline: 1px solid #fff8ee90; outline-offset: 7px; }
+.collage-page { background: var(--cream); color: var(--ink); }
+.collage-page .site-header { color: var(--ink); border-bottom-color: #29372f25; }
+.collage-heading { max-width: 1600px; margin: auto; padding: 65px 5vw 20px; display: flex; justify-content: space-between; gap: 35px; align-items: end; }
+.collage-heading h1 { font-size: clamp(46px, 6vw, 88px); line-height: 1.05; margin: 16px 0 0; }
+.collage-heading .collection-description { flex-shrink: 0; max-width: 290px; margin: 0 0 4px; font: italic 20px/1.5 var(--serif); }
+.collage-heading .collection-description span { display: block; margin-top: 12px; font: 10px/1.5 var(--mono); }
+.collage-page .collection-nav-top { margin: 0 auto; padding: 18px 5vw 35px; justify-content: flex-start; max-width: 1600px; gap: 9px 25px; }
+.collage-page .collection-nav a[aria-current] { color: var(--ink); font-weight: 600; }
+.collage-board { padding: 0 3vw; max-width: 1600px; margin: auto; }
+.collage-interactive .collage-photo { cursor: zoom-in; transition: box-shadow .2s; }
+.collage-interactive .collage-photo:hover { box-shadow: 0 0 0 3px #fff8ee; z-index: 5; }
+.collage-interactive .collage-photo:focus-visible { z-index: 6; outline: 3px solid #101c30; outline-offset: 5px; box-shadow: 0 0 0 8px #fff8ee; }
+.collage-page .collection-body { max-width: 1500px; padding: 75px 7vw 45px; }
+.more-photos-label { margin-bottom: 38px; }
+.collage-page .collection-grid { columns: auto; display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); column-gap: 3vw; row-gap: 35px; align-items: start; }
+.collage-page .collection-photo { grid-column: span 4; margin: 0; }
+.collage-page .collection-photo:nth-child(3n+2) { margin-top: 70px; }
+.collage-page .collection-photo:nth-child(6n+4) { grid-column: span 5; }
+.collage-page .collection-photo:nth-child(6n+5) { grid-column: span 3; }
+.collage-page .collection-photo figcaption { color: #526055; }
+.collage-page .collection-end { border-top-color: #29372f30; }
+.collage-page .collection-end .pill:hover { background: var(--ink); color: var(--cream); }
+.collage-page .collection-inquire { background: #eadfe0; }
+@media (max-width: 900px) {
+  .collage-heading { align-items: start; flex-direction: column; gap: 20px; padding-top: 40px; }
+  .collage-heading .collection-description { max-width: none; font-size: 18px; }
+  .collage-heading .collection-description span { display: inline-block; margin-left: 20px; }
+}
+@media (max-width: 760px) {
+  .collection-overview { grid-template-columns: 1fr; gap: 45px; }
+  .collection-overview .collection-link figcaption > span:first-child { font-size: 31px; }
+  .collage-heading { padding-left: 6vw; padding-right: 6vw; }
+  .collage-heading h1 { font-size: clamp(43px, 10.7vw, 65px); }
+  .collage-heading .collection-description span { display: block; margin-left: 0; }
+  .collage-page .collection-nav-top { padding: 8px 6vw 30px; gap: 3px 20px; display: grid; grid-template-columns: 1fr 1fr; }
+  .collage-page .collection-nav-top a { font-size: 10px; }
+  .collage-board { padding: 0 4vw; }
+  .collage-interactive { aspect-ratio: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; align-items: start; }
+  .collage-interactive .collage-photo { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 3 / 4; z-index: auto; }
+  .collage-interactive .collage-photo:nth-child(3n+2) { margin-top: 28px; }
+  .collage-interactive .collage-photo:last-child:nth-child(odd) { grid-column: span 2; width: 75%; justify-self: center; aspect-ratio: 1; }
+  .collage-interactive.collage-destination .collage-photo:last-child { width: 100%; aspect-ratio: 1.5; }
+  .collage-interactive.collage-event .collage-photo:first-child { grid-column: span 2; width: 80%; justify-self: center; }
+  .collage-interactive.collage-event .collage-photo:last-child { grid-column: auto; width: 100%; aspect-ratio: 3 / 4; margin-top: -35px; }
+  .collage-page .collection-body { padding: 55px 6vw 35px; }
+  .collage-page .collection-grid { grid-template-columns: 1fr 1fr; gap: 30px 16px; }
+  .collage-page .collection-photo:nth-child(n) { grid-column: auto; margin: 0; }
+  .collage-page .collection-photo:nth-child(even) { margin-top: 30px; }
+  .collage-page .photo-expand { padding: 7px 9px; font-size: 8px; right: 7px; bottom: 7px; }
+  .collage-page .photo-dialog .photo-expand { font-size: 10px; }
+}

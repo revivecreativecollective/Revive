@@ -46,6 +46,23 @@
     const fragment = document.createDocumentFragment();
     for (const item of content.portfolio) {
       if (typeof item.image !== 'string' || !item.image.startsWith('assets/') || item.image.includes('..')) continue;
+      if (Array.isArray(item.collage) && /^work-[a-z-]+\.html$/.test(item.href || '')) {
+        const link = document.createElement('a'); link.className = 'collection-link'; link.href = item.href; link.setAttribute('aria-label', `Explore ${item.caption}`);
+        const figure = document.createElement('figure');
+        const board = document.createElement('div'); board.className = 'photo-collage collage-' + (['style','destination','food','event'].includes(item.theme) ? item.theme : 'style');
+        for (const spot of item.collage) {
+          if (!spot.image?.startsWith('assets/') || spot.image.includes('..')) continue;
+          const frame = document.createElement('span'); frame.className = 'collage-photo' + (spot.cutout ? ' collage-cutout' : '');
+          for (const key of ['x','y','w','h']) frame.style.setProperty('--' + key, Number(spot[key]) + '%');
+          frame.style.setProperty('--layer', Number(spot.layer) || 1);
+          const picture = document.createElement('img'); picture.src = spot.thumbnail || spot.image; picture.alt = ''; picture.width = spot.width; picture.height = spot.height; picture.loading = 'lazy'; picture.decoding = 'async';
+          if (spot.srcset) { picture.srcset = spot.srcset; picture.sizes = '(max-width: 760px) 35vw, 20vw'; }
+          frame.append(picture); board.append(frame);
+        }
+        const caption = document.createElement('figcaption'), title = document.createElement('span'), cue = document.createElement('span');
+        title.textContent = item.caption; cue.className = 'collection-cue'; cue.textContent = `Explore collection · ${item.count} photos ↗`;
+        caption.append(title,cue); figure.append(board,caption); link.append(figure); fragment.append(link); continue;
+      }
       const figure = document.createElement('figure'); if (['wide', 'tall'].includes(item.layout)) figure.className = item.layout;
       const image = document.createElement('img'); image.src = item.thumbnail || item.image; image.alt = item.alt || ''; image.loading = 'lazy'; image.decoding = 'async'; image.width = item.width || 1000; image.height = item.height || 1250;
       if (item.srcset) { image.srcset = item.srcset; image.sizes = item.layout === 'wide' ? '(max-width: 760px) 88vw, 56vw' : '(max-width: 760px) 85vw, 28vw'; }
