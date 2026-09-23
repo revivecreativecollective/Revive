@@ -212,7 +212,7 @@ window.REVIVE_CONTENT = {
         }
       ],
       "href": "work-destination.html",
-      "count": 11
+      "count": 7
     },
     {
       "image": "assets/web/portfolio-earlgrey-1800.webp",
@@ -317,7 +317,7 @@ window.REVIVE_CONTENT = {
         }
       ],
       "href": "work-food-drink.html",
-      "count": 16
+      "count": 14
     },
     {
       "image": "assets/web/portfolio-champagnelanes-1800.webp",
@@ -398,7 +398,7 @@ window.REVIVE_CONTENT = {
         }
       ],
       "href": "work-event.html",
-      "count": 9
+      "count": 7
     }
   ]
 };

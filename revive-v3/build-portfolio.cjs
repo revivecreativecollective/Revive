@@ -22,6 +22,7 @@ if(typeof inquiry!=='string'||!inquiry.startsWith('https://'))throw new Error('S
  changed['index.html']=fs.readFileSync(path.join(root,'index.html'),'utf8').replace(/(<div class="gallery(?: collection-overview)?" id="portfolioGallery">)[\s\S]*?(\n      <\/div>)/,'<div class="gallery collection-overview" id="portfolioGallery">\n'+cards+'$2');
  for(const [index,c] of collections.entries()){
   const next=collections[(index+1)%collections.length],first=photos[c.items[0]];
+  const remaining=c.items.filter(slug=>!c.collage.some(spot=>spot.photo===slug));
   const nav=collections.map(x=>`<a href="work-${x.slug}.html"${x.slug===c.slug?' aria-current="page"':''}>${esc(x.nav)}</a>`).join('');
   changed[`work-${c.slug}.html`]=`<!doctype html>
 <html lang="en">
@@ -45,9 +46,9 @@ if(typeof inquiry!=='string'||!inquiry.startsWith('https://'))throw new Error('S
     <section class="collage-heading" aria-labelledby="collectionTitle"><div><p class="kicker">The collections / ${String(index+1).padStart(2,'0')}</p><h1 id="collectionTitle">${esc(c.title)}</h1></div><p class="collection-description">${esc(c.intro)}<span>${c.items.length} photographs · By Eden</span></p></section>
     <nav class="collection-nav collection-nav-top" aria-label="Portfolio collections">${nav}</nav>
     <section class="collage-board" aria-label="${esc(c.title)} photo collage">${collage(c,true)}</section>
-    <section class="collection-body" id="photographs" aria-label="More ${esc(c.nav.toLowerCase())} photographs"><p class="kicker more-photos-label">A little more to explore</p><div class="collection-grid">
-      ${c.items.filter(slug=>!c.collage.some(spot=>spot.photo===slug)).map(slug=>photo(slug,c.items.indexOf(slug),c.items.length)).join('\n      ')}
-    </div></section>
+    ${remaining.length?`<section class="collection-body" id="photographs" aria-label="More ${esc(c.nav.toLowerCase())} photographs"><p class="kicker more-photos-label">A little more to explore</p><div class="collection-grid">
+      ${remaining.map(slug=>photo(slug,c.items.indexOf(slug),c.items.length)).join('\n      ')}
+    </div></section>`:''}
     <section class="collection-end" aria-labelledby="moreTitle"><p class="kicker">Keep exploring</p><h2 id="moreTitle">${esc(next.title)}</h2><a class="pill" href="work-${next.slug}.html">Next collection <span aria-hidden="true">↗</span></a></section>
     <section class="collection-inquire"><h2>Let’s curate <em>your world.</em></h2><a class="pill solid" data-inquiry-link href="${inquiry}">Start something <span aria-hidden="true">↗</span></a></section>
   </main>
