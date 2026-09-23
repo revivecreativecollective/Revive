@@ -106,7 +106,7 @@ window.REVIVE_CONTENT = {
         }
       ],
       "href": "work-clothing-beauty.html",
-      "count": 16
+      "count": 13
     },
     {
       "image": "assets/web/portfolio-montenegro-1800.webp",
