@@ -198,3 +198,10 @@ footer { background: #142a30; color: var(--cream); padding: 35px 4.5vw 75px; dis
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .night-sky { opacity: .55; }.shooting-star { display: none; }
 }
+
+/* Footer social link */
+.footer-contact { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-instagram { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; color: inherit; transition: background-color .2s; }
+.footer-instagram:hover { background-color: rgba(255,255,255,.12); }
+.footer-instagram:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.footer-instagram svg { display: block; }
